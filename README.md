@@ -1,7 +1,5 @@
-# Pagination for [Twitter Bootstrap 3](http://getbootstrap.com/components/#pagination)
+# Another test blog
 
-With support for:
+Another test implementation of my blog _'Kamome'_, this time in Rails.
 
-- erb
-- haml
-- slim
+Uses [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on) to generate blog tags.
