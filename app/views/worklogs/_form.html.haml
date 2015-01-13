@@ -1,0 +1,29 @@
+= form_for @worklog do |f|
+  - if @worklog.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@worklog.errors.count, "error")} prohibited this worklog from being saved:"
+      %ul
+        - @worklog.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :date
+    %br/
+    = f.date_select :date
+  .field
+    = f.label :location
+    %br/
+    = f.text_field :location, :size => "60%"
+  .field
+    = f.label :public
+    %br/
+    = f.text_area :public, :size => "60%x5%"
+  .field
+    = f.label :private
+    %br/
+    = f.text_area :private, :size => "60%x5%"
+  .field
+    = f.label :notes
+    %br/
+    = f.text_field :notes, :size => "60%"
+  .actions
+    = f.submit 'Save'

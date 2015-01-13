@@ -1,0 +1,27 @@
+%h1 Listing worklogs
+
+%table.table.table-striped.paginated
+  %tr
+    %th Date
+    %th Location
+    %th Public
+    %th Private
+    %th Notes
+    %th
+    %th
+    %th
+
+  - @worklogs.each do |worklog|
+    %tr
+      %td= worklog.date
+      %td= worklog.location
+      %td= worklog.public
+      %td= worklog.private
+      %td= worklog.notes
+      %td= link_to 'Show', worklog
+      %td= link_to 'Edit', edit_worklog_path(worklog)
+      %td= link_to 'Destroy', worklog, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Worklog', new_worklog_path

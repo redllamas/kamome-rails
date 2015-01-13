@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title kamome
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %div.container-fluid
+      %div.row-fluid
+        %div.col-xs-12.col-sm-3.col-md-3
+          %h2
+            = link_to "alright mate", root_path, :class => "main-title"
+          #blog_links
+            = link_to 'blog', posts_path
+            \/
+            = link_to 'worklog', worklogs_path
+          #tag_cloud
+            - tag_cloud Post.tag_counts_on(:tags), %w[s m l] do |tag, css_class|
+              = link_to tag.name, { tag: tag.name }, class: css_class
+        %div.col-xs-12.col-sm-9.col-md-9.yield-content
+          = yield

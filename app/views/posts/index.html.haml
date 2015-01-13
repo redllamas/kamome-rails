@@ -1,0 +1,15 @@
+= link_to 'New Post', new_post_path, :class => "btn btn-sm btn-info"
+- @posts.each do |post|
+  %h2= post.title
+  %p= truncate(post.content, length: 150) {link_to ' more', post}
+  .clearfix
+    %p.tags.pull-right= post.tag_list
+  %div.pull-right
+    = link_to 'Show', post, :class => "btn btn-sm btn-default"
+    = link_to 'Edit', edit_post_path(post), :class => "btn btn-sm btn-default"
+    = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-sm btn-danger"
+%br
+= paginate @posts
+%br/
+= page_entries_info @posts
+%br/

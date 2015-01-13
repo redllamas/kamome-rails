@@ -1,0 +1,11 @@
+%p#notice= notice
+
+%h2= @post.title
+%p= @post.content
+%hr/
+.clearfix
+  %p.tags.pull-right= @post.tag_list
+%br/
+.pull-right.clearfix
+  = link_to 'Edit', edit_post_path(@post), :class => "btn btn-sm btn-default"
+  = link_to 'Back', posts_path, :class => "btn btn-sm btn-info"

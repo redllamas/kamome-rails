@@ -1,0 +1,56 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.yield-content {
+  margin-top: 30px;
+}
+
+// general text
+p,
+span {
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+// title-specific
+.main-title,
+.main-title:visited {
+  color: #DC322F;
+  font-size: 2em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.main-title:hover {
+  text-decoration: none;
+}
+
+.tags {
+  color: #DC322F; 
+  margin-bottom: 5px;
+}
+#tag_cloud {
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+#blog_links {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%h3 Date:
+= @worklog.date
+%h3 Location:
+= @worklog.location
+%h3 Public:
+= @worklog.public
+%h3 Private:
+= @worklog.private
+%h3 Notes:
+= @worklog.notes
+%hr/
+= link_to 'Edit', edit_worklog_path(@worklog)
+\|
+= link_to 'Back', worklogs_path
